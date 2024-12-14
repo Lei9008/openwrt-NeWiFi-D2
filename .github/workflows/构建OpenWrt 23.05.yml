@@ -175,11 +175,4 @@ jobs:
             ### OpenWrt Image Verification
             - sha256sum
     
-    - name: 删除旧版本(Remove old Releases)
-      uses: dev-drprasad/delete-older-releases@v0.1.0
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      with:
-        keep_latest: 3
-        delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+   
