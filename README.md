@@ -12,22 +12,22 @@ A template for building OpenWrt with GitHub Actions
 
 ## Usage 使用方法
 
-- Click the [Use this template](https://github.com/P3TERX/Actions-OpenWrt/generate) button to create a new repository.
+1 Click the [Use this template](https://github.com/P3TERX/Actions-OpenWrt/generate) button to create a new repository.
 - 点击[使用此模板](https://github.com/P3TERX/Actions-OpenWrt/generate)按钮创建一个新的仓库.
   
-- Generate `.config` files using [Lean's OpenWrt](https://github.com/coolsnowwolf/lede) source code. ( You can change it through environment variables in the workflow file. )
+2 Generate `.config` files using [Lean's OpenWrt](https://github.com/coolsnowwolf/lede) source code. ( You can change it through environment variables in the workflow file. )
 - 使用[Lean's OpenWrt](https://github.com/coolsnowwolf/lede)源代码生成`.config`文件。（您可以通过工作流文件中的环境变量对其进行更改。)
   
-- Push `.config` file to the GitHub repository.
+3 Push `.config` file to the GitHub repository.
 - 将`.config`文件推送到GitHub存储库.
   
-- Select `Build OpenWrt` on the Actions page.
+4 Select `Build OpenWrt` on the Actions page.
 - 在“操作”页面上选择“构建OpenWrt”.
   
-- Click the `Run workflow` button.
+5 Click the `Run workflow` button.
 - 单击“运行工作流”按钮。
   
-- When the build is complete, click the `Artifacts` button in the upper right corner of the Actions page to download the binaries.
+6 When the build is complete, click the `Artifacts` button in the upper right corner of the Actions page to download the binaries.
 - 构建完成后，单击Actions页面右上角的Artifacts按钮下载二进制文件.
   
 ## Tips 提示
