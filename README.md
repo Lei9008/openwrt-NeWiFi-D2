@@ -13,10 +13,10 @@ A template for building OpenWrt with GitHub Actions
 ## Usage 使用方法
 
 - Click the [Use this template](https://github.com/P3TERX/Actions-OpenWrt/generate) button to create a new repository.
-- 点击[使用此模板]（https：//github.com/P3TERX/P3TERX-OpenBit/generate）按钮创建一个新的仓库.
+- 点击[使用此模板](https://github.com/P3TERX/Actions-OpenWrt/generate)按钮创建一个新的仓库.
   
 - Generate `.config` files using [Lean's OpenWrt](https://github.com/coolsnowwolf/lede) source code. ( You can change it through environment variables in the workflow file. )
-- 使用[Lean's OpenWrt]（https：//github.com/coolsnowsoft/lede）源代码生成`.config`文件。（您可以通过工作流文件中的环境变量对其进行更改。)
+- 使用[Lean's OpenWrt](https://github.com/coolsnowwolf/lede)源代码生成`.config`文件。（您可以通过工作流文件中的环境变量对其进行更改。)
   
 - Push `.config` file to the GitHub repository.
 - 将`.config`文件推送到GitHub存储库.
