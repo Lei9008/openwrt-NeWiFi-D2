@@ -50,3 +50,33 @@ sed -i "s/hostname='OpenWrt'/hostname='Newifi-D2'/g" package/base-files/files/bi
 # rm -rf feeds/luci/themes/luci-theme-argon && git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
 # [ -e package/lean/default-settings/files/zzz-default-settings ] && rm -rf feeds/luci/themes/luci-theme-design feeds/luci/applications/luci-app-design-config && git_svn main https://github.com/fichenx/packages luci-theme-design luci-app-design-config
 
+# 删除重复包
+
+# rm -rf feeds/luci/applications/luci-app-netdata
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf package/small-package/luci-app-openvpn-server
+rm -rf package/small-package/openvpn-easy-rsa-whisky
+rm -rf package/small-package/luci-app-wrtbwmon
+rm -rf package/small-package/wrtbwmon
+rm -rf package/small-package/luci-app-koolproxyR
+rm -rf package/small-package/luci-app-godproxy
+rm -rf package/small-package/luci-app-argon*
+rm -rf package/small-package/luci-theme-argon*
+# rm -rf package/small-package/luci-app-amlogic
+rm -rf package/small-package/luci-app-unblockneteasemusic
+rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
+
+# 其他调整
+NAME=$"package/luci-app-unblockneteasemusic/root/usr/share/unblockneteasemusic" && mkdir -p $NAME/core
+curl 'https://api.github.com/repos/UnblockNeteaseMusic/server/commits?sha=enhanced&path=precompiled' -o commits.json
+echo "$(grep sha commits.json | sed -n "1,1p" | cut -c 13-52)">"$NAME/core_local_ver"
+curl -L https://github.com/UnblockNeteaseMusic/server/raw/enhanced/precompiled/app.js -o $NAME/core/app.js
+curl -L https://github.com/UnblockNeteaseMusic/server/raw/enhanced/precompiled/bridge.js -o $NAME/core/bridge.js
+curl -L https://github.com/UnblockNeteaseMusic/server/raw/enhanced/ca.crt -o $NAME/core/ca.crt
+curl -L https://github.com/UnblockNeteaseMusic/server/raw/enhanced/server.crt -o $NAME/core/server.crt
+curl -L https://github.com/UnblockNeteaseMusic/server/raw/enhanced/server.key -o $NAME/core/server.key
+
+sed -i 's#mount -t cifs#mount.cifs#g' feeds/luci/applications/luci-app-cifs-mount/root/etc/init.d/cifs
+
+
+#sed -i 's#<%+cbi/tabmenu%>##g' package/small-packages/luci-app-nginx-manager/luasrc/view/nginx-manager/index.htm
