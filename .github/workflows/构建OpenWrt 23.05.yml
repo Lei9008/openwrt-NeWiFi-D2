@@ -78,6 +78,8 @@ jobs:
     
     - name: 检出(Checkout)
       uses: actions/checkout@main
+      with:
+        fetch-depth: 0
 
     - name: 检查服务器配置
       run: |
