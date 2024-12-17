@@ -34,7 +34,7 @@ env:
   TZ: Asia/Shanghai
 
 jobs:
-  build:
+ Compile:
     runs-on: ubuntu-22.04
     permissions:
       issues: write
@@ -42,7 +42,6 @@ jobs:
       contents: write
 
     steps:
-    
     - name: 优化磁盘空间"Optimize disk space"
       if: env.DELETE_USELESS_FILES == 'true' && !cancelled()
       uses: "hugoalh/disk-space-optimizer-ghaction@v0.8.0"
